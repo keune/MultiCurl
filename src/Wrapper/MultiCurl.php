@@ -97,10 +97,10 @@ class MultiCurl
 
     /**
      * Selects all sockets which have an activity.
-     * @param int|null $timeout The timeout in seconds to wait.
+     * @param int $timeout The timeout in seconds to wait.
      * @return int The number of selected descriptors.
      */
-    public function select(int $timeout = null): int
+    public function select(int $timeout = 0): int
     {
         return curl_multi_select($this->handle, $timeout);
     }
